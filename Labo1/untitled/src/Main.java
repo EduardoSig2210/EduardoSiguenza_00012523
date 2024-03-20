@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         int opcion = 0, result = 0, num1 = 0, num2 = 0;
-         System.out.println("Bienvenino");
          Scanner scanner = new Scanner(System.in);
          while (opcion != 5) {
+             System.out.println("Bienvenino");
              System.out.printf("1. Suma %n2. Resta %n3. Multiplicacion %n4. Division %n5. Salir %nQue desea realizar ");
              opcion = scanner.nextInt();
              switch (opcion) {
@@ -42,8 +42,14 @@ public class Main {
                      num1 = scanner.nextInt();
                      System.out.println("Ingrese el segundo numero: ");
                      num2 = scanner.nextInt();
-                     result = division(num1,num2);
-                     System.out.println("La division de " + num1 + " y " + num2  + " es igual a " + result);
+                     if(num2==0){
+                         System.out.println("La division entre 0 no es posible");
+                     }
+                     else {
+                         result = division(num1,num2);
+                         System.out.println("La division de " + num1 + " y " + num2  + " es igual a " + result);
+                     }
+
                      break;
                  case 5:
                      System.out.println("Tenga un buen dia");
